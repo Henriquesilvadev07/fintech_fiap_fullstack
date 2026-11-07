@@ -1,7 +1,6 @@
 package com.rickdev.fiapFintech.Service;
 
 import com.rickdev.fiapFintech.Dto.TaskDto;
-import com.rickdev.fiapFintech.Model.StatusEnum;
 import com.rickdev.fiapFintech.Model.ClienteModel;
 import com.rickdev.fiapFintech.Repository.TaskRepository;
 import org.junit.jupiter.api.DisplayName;
