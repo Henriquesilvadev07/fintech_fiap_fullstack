@@ -1,9 +1,25 @@
--- 1. CRIANDO AS SEQUENCES (Requerido para IDs no Oracle)
+-- ==========================================
+-- 1. SEQUENCES
+-- ==========================================
+CREATE SEQUENCE SQ_FIN_USER START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 CREATE SEQUENCE SQ_FIN_CLIENTE START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 CREATE SEQUENCE SQ_FIN_CONTA START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 CREATE SEQUENCE SQ_FIN_TRANSACAO START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
 
--- 2. TABELA DE CLIENTE
+-- ==========================================
+-- 2. TABELA DE USUÁRIOS (Autenticação / Spring Security)
+-- ==========================================
+CREATE TABLE T_FIN_USER (
+                            id_user NUMBER(19) NOT NULL,
+                            ds_login VARCHAR2(100) NOT NULL,
+                            ds_senha VARCHAR2(255) NOT NULL,
+                            CONSTRAINT PK_FIN_USER PRIMARY KEY (id_user),
+                            CONSTRAINT UN_FIN_USER_LOGIN UNIQUE (ds_login)
+);
+
+-- ==========================================
+-- 3. TABELA DE CLIENTE
+-- ==========================================
 CREATE TABLE T_FIN_CLIENTE (
                                id_cliente NUMBER(19) NOT NULL,
                                nm_cliente VARCHAR2(100) NOT NULL,
@@ -15,7 +31,9 @@ CREATE TABLE T_FIN_CLIENTE (
                                CONSTRAINT UN_FIN_CLIENTE_CPF UNIQUE (ds_cpf)
 );
 
--- 3. TABELA DE CONTAS
+-- ==========================================
+-- 4. TABELA DE CONTAS
+-- ==========================================
 CREATE TABLE T_FIN_CONTA (
                              id_conta NUMBER(19) NOT NULL,
                              nr_agencia VARCHAR2(10) NOT NULL,
@@ -26,7 +44,9 @@ CREATE TABLE T_FIN_CONTA (
                              CONSTRAINT FK_FIN_CONTA_CLIENTE FOREIGN KEY (id_cliente) REFERENCES T_FIN_CLIENTE(id_cliente)
 );
 
--- 4. TABELA DE TRANSAÇÕES
+-- ==========================================
+-- 5. TABELA DE TRANSAÇÕES
+-- ==========================================
 CREATE TABLE T_FIN_TRANSACAO (
                                  id_transacao NUMBER(19) NOT NULL,
                                  tp_transacao VARCHAR2(20) NOT NULL,
