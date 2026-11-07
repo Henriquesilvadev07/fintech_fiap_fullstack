@@ -1,8 +1,8 @@
-package com.rickdev.DevTasks.Controller;
+package com.rickdev.fiapFintech.Controller;
 
-import com.rickdev.DevTasks.Dto.TaskDto;
-import com.rickdev.DevTasks.Model.ClienteModel;
-import com.rickdev.DevTasks.Service.TaskService;
+import com.rickdev.fiapFintech.Dto.TaskDto;
+import com.rickdev.fiapFintech.Model.ClienteModel;
+import com.rickdev.fiapFintech.Service.TaskService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

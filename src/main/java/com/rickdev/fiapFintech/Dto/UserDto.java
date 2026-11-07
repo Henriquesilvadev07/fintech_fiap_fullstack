@@ -1,4 +1,4 @@
-package com.rickdev.DevTasks.Dto;
+package com.rickdev.fiapFintech.Dto;
 
 import jakarta.validation.constraints.NotBlank;
 

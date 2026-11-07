@@ -1,4 +1,4 @@
-package com.rickdev.DevTasks.Security;
+package com.rickdev.fiapFintech.Security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

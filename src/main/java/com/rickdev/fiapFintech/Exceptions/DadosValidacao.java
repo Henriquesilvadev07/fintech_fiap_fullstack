@@ -1,4 +1,4 @@
-package com.rickdev.DevTasks.Exceptions;
+package com.rickdev.fiapFintech.Exceptions;
 
 import org.springframework.validation.FieldError;
 
