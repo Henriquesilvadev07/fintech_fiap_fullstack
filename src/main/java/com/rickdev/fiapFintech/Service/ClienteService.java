@@ -1,5 +1,6 @@
 package com.rickdev.fiapFintech.Service;
 
+import com.rickdev.fiapFintech.Dto.ClienteDto;
 import com.rickdev.fiapFintech.Model.ClienteModel;
 import com.rickdev.fiapFintech.Repository.ClienteRepository;
 import lombok.AllArgsConstructor;
@@ -12,6 +13,8 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ClienteService {
 
+
+
     private final ClienteRepository clienteRepository;
 
     public List<ClienteModel> listarTodos() {
@@ -22,23 +25,28 @@ public class ClienteService {
         return clienteRepository.findById(id);
     }
 
-    public ClienteModel salvar(ClienteModel usuario) {
-        return clienteRepository.save(usuario);
+    public ClienteModel salvar(ClienteDto dto) {
+        ClienteModel cliente = new ClienteModel();
+        cliente.setNome(dto.nome());
+        cliente.setCpf(dto.cpf());
+        cliente.setEmail(dto.email());
+        cliente.setDataNascimento(dto.dataNascimento());
+        return clienteRepository.save(cliente);
     }
 
-    public Optional<ClienteModel> atualizar(Long id, Usuario usuarioAtualizado) {
-        return usuarioRepository.findById(id).map(usuario -> {
-            usuario.setNome(usuarioAtualizado.getNome());
-            usuario.setEmail(usuarioAtualizado.getEmail());
-            usuario.setCpf(usuarioAtualizado.getCpf());
-            usuario.setDataNascimento(usuarioAtualizado.getDataNascimento());
-            return usuarioRepository.save(usuario);
+    public Optional<ClienteModel> atualizar(Long id, ClienteDto dto) {
+        return clienteRepository.findById(id).map(cliente -> {
+            cliente.setNome(dto.nome());
+            cliente.setEmail(dto.email());
+            cliente.setCpf(dto.cpf());
+            cliente.setDataNascimento(dto.dataNascimento());
+            return clienteRepository.save(cliente);
         });
     }
 
     public boolean deletar(Long id) {
-        if (usuarioRepository.existsById(id)) {
-            usuarioRepository.deleteById(id);
+        if (clienteRepository.existsById(id)) {
+            clienteRepository.deleteById(id);
             return true;
         }
         return false;
