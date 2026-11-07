@@ -1,6 +1,5 @@
 package com.rickdev.fiapFintech.Controller;
 
-import com.rickdev.fiapFintech.Dto.TaskDto;
 import com.rickdev.fiapFintech.Model.ClienteModel;
 import com.rickdev.fiapFintech.Service.TaskService;
 import jakarta.validation.Valid;

@@ -1,6 +1,5 @@
 package com.rickdev.fiapFintech.Service;
 
-import com.rickdev.fiapFintech.Dto.TaskDto;
 import com.rickdev.fiapFintech.Model.ClienteModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
