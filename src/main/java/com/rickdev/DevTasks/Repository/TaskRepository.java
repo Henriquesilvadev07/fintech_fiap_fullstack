@@ -1,7 +1,7 @@
 package com.rickdev.DevTasks.Repository;
 
-import com.rickdev.DevTasks.Model.TaskModel;
+import com.rickdev.DevTasks.Model.ClienteModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TaskRepository extends JpaRepository<TaskModel, Long> {
+public interface TaskRepository extends JpaRepository<ClienteModel, Long> {
 }

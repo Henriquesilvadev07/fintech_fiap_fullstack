@@ -2,7 +2,7 @@ package com.rickdev.DevTasks.Service;
 
 import com.rickdev.DevTasks.Dto.TaskDto;
 import com.rickdev.DevTasks.Model.StatusEnum;
-import com.rickdev.DevTasks.Model.TaskModel;
+import com.rickdev.DevTasks.Model.ClienteModel;
 import com.rickdev.DevTasks.Repository.TaskRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -38,42 +38,42 @@ class TaskServiceTest {
                 StatusEnum.A_FAZER,
                 LocalDateTime.now());
 
-        TaskModel task = new TaskModel();
+        ClienteModel task = new ClienteModel();
         task.setTitulo(dto.titulo());
         task.setDescricao(dto.descricao());
         task.setStatus(dto.status());
         task.setDataCriacao(dto.dataCriacao());
 
-        when(taskRepository.save(any(TaskModel.class))).thenReturn(task);
+        when(taskRepository.save(any(ClienteModel.class))).thenReturn(task);
 
-        TaskModel taskSalvas = taskService.salvar(dto);
+        ClienteModel taskSalvas = taskService.salvar(dto);
 
         assertNotNull(taskSalvas);
         assertEquals("Limpeza", taskSalvas.getTitulo());
 
-        verify(taskRepository, times(1)).save(any(TaskModel.class));
+        verify(taskRepository, times(1)).save(any(ClienteModel.class));
     }
 
     @Test
     @DisplayName("Should return a list of tasks successfully")
     void listar() {
-        TaskModel task1 = new TaskModel();
+        ClienteModel task1 = new ClienteModel();
         task1.setTitulo("Limpeza");
         task1.setDescricao("Realizar limpeza de perifericos");
         task1.setDataCriacao(LocalDateTime.now());
         task1.setStatus(StatusEnum.A_FAZER);
 
-        TaskModel task2 = new TaskModel();
+        ClienteModel task2 = new ClienteModel();
         task2.setTitulo("Manutencao");
         task2.setDescricao("Realizar manutencao de perifericos");
         task2.setDataCriacao(LocalDateTime.now());
         task2.setStatus(StatusEnum.A_FAZER);
 
-        List<TaskModel> listaMocks = Arrays.asList(task1, task2);
+        List<ClienteModel> listaMocks = Arrays.asList(task1, task2);
 
         when(taskRepository.findAll()).thenReturn(listaMocks);
 
-        List<TaskModel> tarefas = taskService.listarTodos();
+        List<ClienteModel> tarefas = taskService.listarTodos();
 
         //deve testar o retorno da service
         assertNotNull(tarefas);
@@ -92,21 +92,21 @@ class TaskServiceTest {
                 StatusEnum.A_FAZER,
                 LocalDateTime.now());
 
-        TaskModel task = new TaskModel();
+        ClienteModel task = new ClienteModel();
         task.setTitulo(dto.titulo());
         task.setDescricao(dto.descricao());
         task.setStatus(dto.status());
         task.setDataCriacao(dto.dataCriacao());
 
         when(taskRepository.findById(id)).thenReturn(Optional.of(task));
-        when(taskRepository.saveAndFlush(any(TaskModel.class))).thenReturn(task);
+        when(taskRepository.saveAndFlush(any(ClienteModel.class))).thenReturn(task);
 
-        TaskModel taskAtualizada = taskService.atualizarPorId(id, dto);
+        ClienteModel taskAtualizada = taskService.atualizarPorId(id, dto);
 
         assertNotNull(taskAtualizada);
         assertEquals("Limpeza", taskAtualizada.getTitulo());
 
-        verify(taskRepository, times(1)).saveAndFlush(any(TaskModel.class));
+        verify(taskRepository, times(1)).saveAndFlush(any(ClienteModel.class));
     }
 
     @Test
@@ -118,7 +118,7 @@ class TaskServiceTest {
                 StatusEnum.A_FAZER,
                 LocalDateTime.now());
 
-        TaskModel task = new TaskModel();
+        ClienteModel task = new ClienteModel();
         task.setTitulo(dto.titulo());
         task.setDescricao(dto.descricao());
         task.setStatus(dto.status());
@@ -132,7 +132,7 @@ class TaskServiceTest {
 
         assertEquals("Task Nao existente", exception.getMessage());
 
-        verify(taskRepository, never()).saveAndFlush(any(TaskModel.class));
+        verify(taskRepository, never()).saveAndFlush(any(ClienteModel.class));
 
     }
 
@@ -141,7 +141,7 @@ class TaskServiceTest {
     void findWithSuccess() {
 
         Long id = 1L;
-        TaskModel task = new TaskModel();
+        ClienteModel task = new ClienteModel();
         task.setTitulo("Manutencao");
         task.setDescricao("Realizar manutencao de perifericos");
         task.setDataCriacao(LocalDateTime.now());
@@ -149,7 +149,7 @@ class TaskServiceTest {
 
         when(taskRepository.findById(id)).thenReturn(Optional.of(task));
 
-        TaskModel taskEncontrada = taskService.acharPorId(id);
+        ClienteModel taskEncontrada = taskService.acharPorId(id);
 
         assertNotNull(taskEncontrada);
         assertEquals("Manutencao", taskEncontrada.getTitulo());
@@ -162,7 +162,7 @@ class TaskServiceTest {
     @DisplayName("Should return a exception with a invalid id")
     void findWithException() {
         Long id = 1L;
-        TaskModel task = new TaskModel();
+        ClienteModel task = new ClienteModel();
         task.setTitulo("Manutencao");
         task.setDescricao("Realizar manutencao de perifericos");
         task.setDataCriacao(LocalDateTime.now());
