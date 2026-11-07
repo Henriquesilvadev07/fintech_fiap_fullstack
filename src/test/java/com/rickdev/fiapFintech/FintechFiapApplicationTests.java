@@ -1,4 +1,4 @@
-package com.rickdev.DevTasks;
+package com.rickdev.fiapFintech;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

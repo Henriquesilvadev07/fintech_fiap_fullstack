@@ -1,4 +1,4 @@
-package com.rickdev.DevTasks.Model;
+package com.rickdev.fiapFintech.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

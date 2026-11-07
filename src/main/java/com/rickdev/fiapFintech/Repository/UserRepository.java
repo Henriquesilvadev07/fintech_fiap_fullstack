@@ -1,6 +1,6 @@
-package com.rickdev.DevTasks.Repository;
+package com.rickdev.fiapFintech.Repository;
 
-import com.rickdev.DevTasks.Model.UserModel;
+import com.rickdev.fiapFintech.Model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

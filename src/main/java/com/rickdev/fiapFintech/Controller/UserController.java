@@ -1,10 +1,10 @@
-package com.rickdev.DevTasks.Controller;
+package com.rickdev.fiapFintech.Controller;
 
-import com.rickdev.DevTasks.Dto.TokenJwtDto;
-import com.rickdev.DevTasks.Dto.UserDto;
-import com.rickdev.DevTasks.Model.UserModel;
-import com.rickdev.DevTasks.Service.TokenService;
-import com.rickdev.DevTasks.Service.UserService;
+import com.rickdev.fiapFintech.Dto.TokenJwtDto;
+import com.rickdev.fiapFintech.Dto.UserDto;
+import com.rickdev.fiapFintech.Model.UserModel;
+import com.rickdev.fiapFintech.Service.TokenService;
+import com.rickdev.fiapFintech.Service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

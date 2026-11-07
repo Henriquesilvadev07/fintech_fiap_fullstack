@@ -1,4 +1,4 @@
-package com.rickdev.DevTasks.Model;
+package com.rickdev.fiapFintech.Model;
 
 public enum StatusEnum {A_FAZER, EM_ANDAMENTO, CONCLUIDO
 }

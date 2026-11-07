@@ -1,10 +1,9 @@
-package com.rickdev.DevTasks.Service;
+package com.rickdev.fiapFintech.Service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.rickdev.DevTasks.Model.UserModel;
-import lombok.RequiredArgsConstructor;
+import com.rickdev.fiapFintech.Model.UserModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

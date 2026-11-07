@@ -1,7 +1,7 @@
-package com.rickdev.DevTasks.Dto;
+package com.rickdev.fiapFintech.Dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.rickdev.DevTasks.Model.StatusEnum;
+import com.rickdev.fiapFintech.Model.StatusEnum;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
