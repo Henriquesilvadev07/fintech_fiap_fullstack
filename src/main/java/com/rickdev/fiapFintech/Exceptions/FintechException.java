@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class TaskException {
+public class FintechException {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity erro404(RuntimeException exception){
