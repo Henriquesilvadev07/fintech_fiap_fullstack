@@ -13,18 +13,20 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "\"user\"")
+@Table(name = "T_FIN_USER")
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserModel implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_T_USERS")
+    @SequenceGenerator(name = "SQ_T_USERS", sequenceName = "SQ_T_USERS", allocationSize = 1)
     private Long id;
 
-    @Column(unique = true)
+    @Column(name = "ds_login", unique = true, nullable = false)
     private String login;
 
+    @Column(name = "ds_senha", nullable = false)
     private String senha;
 
     @Override
